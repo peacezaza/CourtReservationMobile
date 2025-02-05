@@ -1,20 +1,41 @@
 import { View, Text, StyleSheet, TextInput, Button } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'expo-router';
 
+
 const Login = () => {
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+    const submitLogin=(username, password)=>{
+        console.log(username,password)
+        setUsername("")
+        setPassword("")
+    }
     return (
         <View style={myStyleSheet.container}>
             <Text style={myStyleSheet.text_login}>Log in</Text>
-            <TextInput style={myStyleSheet.textinput} placeholder='Username' keyboardType='default'></TextInput>
-            <TextInput style={myStyleSheet.textinput} placeholder='Password' keyboardType='default'></TextInput>
+            <TextInput
+                style={myStyleSheet.textinput}
+                placeholder='Username'
+                placeholderTextColor="#0006"
+                keyboardType='default'
+                onChangeText={(value)=>setUsername(value)}
+            />
+            <TextInput
+                style={myStyleSheet.textinput}
+                placeholder='Password'
+                placeholderTextColor="#0006"
+                keyboardType='default'
+                secureTextEntry={true}
+                onChangeText={(value)=>setPassword(value)}
+            />
             <View style={myStyleSheet.buttoninput1}>
-                <Button title='Log in' color="black" />
+                <Button title='Log in' color="black" onPress={()=>submitLogin(username, password)} />
             </View>
             <View style={myStyleSheet.buttoninput2}>
                 <Button color="#000" title='Sign In with Google' />
             </View>
-            <Text style={{ color: "#0007", fontSize: 16, fontWeight: 500 }}>Don't have an account? <Link href="/sign-up" style={{textDecorationLine:"underline", color:"black"}}>Sign up</Link></Text>
+            <Text style={{ color: "#0007", fontSize: 16, fontWeight: 500 }}>Don't have an account? <Link href="/sign-up" style={{ textDecorationLine: "underline", color: "black" }}>Sign up</Link></Text>
         </View>
     )
 }
@@ -25,7 +46,7 @@ const myStyleSheet = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: "center",
-        paddingTop:"40%"
+        paddingTop: "40%"
     },
     text_login: {
         fontSize: 40,
@@ -48,7 +69,7 @@ const myStyleSheet = StyleSheet.create({
     },
     buttoninput2: {
         margin: 10,
-        marginBottom:20,
+        marginBottom: 20,
         width: 250,
         borderRadius: 10,
         overflow: 'hidden',

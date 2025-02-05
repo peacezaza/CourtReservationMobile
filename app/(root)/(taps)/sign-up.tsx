@@ -6,10 +6,10 @@ const SignUp = () => {
     return (
         <View style={myStyleSheet.container}>
             <Text style={myStyleSheet.text_SignUp}>Sign up</Text>
-            <TextInput style={myStyleSheet.textinput} placeholder='Username' keyboardType='default'></TextInput>
-            <TextInput style={myStyleSheet.textinput} placeholder='Email' keyboardType='default'></TextInput>
-            <TextInput style={myStyleSheet.textinput} placeholder='Password' keyboardType='default' secureTextEntry={true}></TextInput>
-            <TextInput style={myStyleSheet.textinput} placeholder='Confirm Password' keyboardType='default' secureTextEntry={true}></TextInput>
+            <TextInput style={myStyleSheet.textinput} placeholder='Username' placeholderTextColor="#0006" keyboardType='default'></TextInput>
+            <TextInput style={myStyleSheet.textinput} placeholder='Email' placeholderTextColor="#0006" keyboardType='default'></TextInput>
+            <TextInput style={myStyleSheet.textinput} placeholder='Password' placeholderTextColor="#0006" keyboardType='default' secureTextEntry={true}></TextInput>
+            <TextInput style={myStyleSheet.textinput} placeholder='Confirm Password' placeholderTextColor="#0006" keyboardType='default' secureTextEntry={true}></TextInput>
             <View style={myStyleSheet.buttoninput1}>
                 <Button title='Sign up' color="black" />
             </View>
@@ -41,7 +41,6 @@ const myStyleSheet = StyleSheet.create({
         margin: 10,
         padding: 10,
         width: 250,
-        color:"gray"
     },
     buttoninput1: {
         margin: 10,
