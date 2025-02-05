@@ -17,7 +17,7 @@ const Login = () => {
             <TextInput
                 style={myStyleSheet.textinput}
                 placeholder='Username'
-                placeholderTextColor="#0006"
+                placeholderTextColor="#0006" 
                 keyboardType='default'
                 onChangeText={(value)=>setUsername(value)}
             />
