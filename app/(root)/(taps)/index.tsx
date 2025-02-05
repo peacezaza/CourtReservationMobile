@@ -10,7 +10,7 @@ export default function Index() {
         alignItems: "center",
       }}
     >
-      <Link href="/sign-in">Sign In</Link>
+      <Link href="/sign-up">Sign In</Link>
       <Link href="/login">Login</Link>
       <Link href="/explore">Explore</Link>
       <Link href="/profile">Profile</Link>

@@ -2,24 +2,26 @@ import { View, Text, StyleSheet, TextInput, Button } from 'react-native'
 import React from 'react'
 import { Link } from 'expo-router';
 
-const Login = () => {
+const SignUp = () => {
     return (
         <View style={myStyleSheet.container}>
-            <Text style={myStyleSheet.text_login}>Log in</Text>
+            <Text style={myStyleSheet.text_SignUp}>Sign up</Text>
             <TextInput style={myStyleSheet.textinput} placeholder='Username' keyboardType='default'></TextInput>
-            <TextInput style={myStyleSheet.textinput} placeholder='Password' keyboardType='default'></TextInput>
+            <TextInput style={myStyleSheet.textinput} placeholder='Email' keyboardType='default'></TextInput>
+            <TextInput style={myStyleSheet.textinput} placeholder='Password' keyboardType='default' secureTextEntry={true}></TextInput>
+            <TextInput style={myStyleSheet.textinput} placeholder='Confirm Password' keyboardType='default' secureTextEntry={true}></TextInput>
             <View style={myStyleSheet.buttoninput1}>
-                <Button title='Log in' color="black" />
+                <Button title='Sign up' color="black" />
             </View>
             <View style={myStyleSheet.buttoninput2}>
-                <Button color="#000" title='Sign In with Google' />
+                <Button color="#000" title='Sign up with Google' />
             </View>
-            <Text style={{ color: "#0007", fontSize: 16, fontWeight: 500 }}>Don't have an account? <Link href="/sign-up" style={{textDecorationLine:"underline", color:"black"}}>Sign up</Link></Text>
+            <Text style={{ color: "#0007", fontSize: 16, fontWeight: 500 }}>have an account? <Link href="/login" style={{textDecorationLine:"underline", color:"black"}}>Log in</Link></Text>
         </View>
     )
 }
 
-export default Login
+export default SignUp
 
 const myStyleSheet = StyleSheet.create({
     container: {
@@ -27,7 +29,7 @@ const myStyleSheet = StyleSheet.create({
         alignItems: "center",
         paddingTop:"40%"
     },
-    text_login: {
+    text_SignUp: {
         fontSize: 40,
         fontWeight: "bold",
         margin: 30,
@@ -38,7 +40,8 @@ const myStyleSheet = StyleSheet.create({
         borderRadius: 10,
         margin: 10,
         padding: 10,
-        width: 250
+        width: 250,
+        color:"gray"
     },
     buttoninput1: {
         margin: 10,
